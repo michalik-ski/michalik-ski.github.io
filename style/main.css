@@ -536,7 +536,7 @@ main#top::before {
 
 .advertisement {
 	display: block;
-	background: url('GOPR7786a.jpg');
+	background: url('../media/photos/BalwanSKI-BG.jpg');
 	background-color: #aaa;
     background-size: cover;
 	background-position: center;
@@ -548,7 +548,7 @@ main#top::before {
 	aspect-ratio: 16/9;
 	height: auto;
 	margin: 20px 0;
-	cursor: url('AdPointer.png'),default;
+	cursor: url('../media/icons/AdPointer.png'),default;
 }
 
 .advertisement img {
@@ -567,7 +567,7 @@ main#top::before {
 	bottom: -7%;
 	left: 50%;
 	transform: translateX(-50%);
-	background: url('Bałwan-SKI_LOGO.png');
+	background: url('../media/icons/Bałwan-SKI_LOGO.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -575,18 +575,18 @@ main#top::before {
 	z-index: 5;
 }
 .advertisement .adLogo:hover {
-	background: url('Bałwan-SKI_LOGO_Agent-B.png');
+	background: url('../media/icons/Bałwan-SKI_LOGO_Agent-B.png');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	overflow: hidden;
 	z-index: 5;
-	cursor: url('AdPointer.png'),default;
+	cursor: url('../media/icons/AdPointer.png'),default;
 }
 body::after {
 	content: "";
 	display: none;
-	background: url('Bałwan-SKI_LOGO_Agent-B.png') no-repeat;
+	background: url('media/icons/Bałwan-SKI_LOGO_Agent-B.png') no-repeat;
 }
 
 .advertisement p.adTXT {
@@ -838,7 +838,7 @@ body::after {
 	width: 100%;
 	height: calc(100dvh - 100px);
 	display: block;
-	background: url('Night.jpg');
+	background: url('/media/photos/Night.jpg');
 	background-color: #aaa;
     background-size: cover;
 	background-position: center;
