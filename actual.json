@@ -3,12 +3,12 @@
   {
     "typ": "trasa",
     "nazwa": "Trasa 1 – skocznia",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00",
     "ratrak_start": "16:00",
     "ratrak_koniec": "16:30",
-    "warunki": true,
+    "warunki": false,
     "pokrywa_sniezna_cm": 20
   },
   {
@@ -25,30 +25,30 @@
   {
     "typ": "trasa",
     "nazwa": "Trasa 3 – MiniGórka",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "19:00",
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
-    "warunki": true,
+    "warunki": false,
     "pokrywa_sniezna_cm": 15
   },
   {
     "typ": "trasa",
     "nazwa": "Trasa 4 – MiniGórka Hopka",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "19:00",
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
-    "warunki": true,
+    "warunki": false,
     "pokrywa_sniezna_cm": 10
   },
   {
     "typ": "wyciąg",
     "typWyciąg": "krzesełko",
     "nazwa": "Dziubtorpeda",
-    "otwarty": true,
+    "otwarty": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00"
   },
@@ -64,7 +64,7 @@
     "typ": "wyciąg",
     "nazwa": "MiniGórka",
     "typWyciąg": "orczyk",
-    "otwarty": true,
+    "otwarty": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "16:00"
   },
