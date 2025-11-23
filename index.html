@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const symbol = open === 0 ? "times-circle" : "check-circle";
         return `
           <div class="trasaO">
-            <img src="${icon}" alt="${label}">
+            <img src="../media/icons/${icon}" alt="${label}">
             <span>
               <h2>${label}:</h2>
               <h1 style="color: ${color};">
@@ -482,12 +482,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let lawinyTxt;
       switch (lawiny) {
-        case 1: lawinyTxt = `<img src="Lawina1.png"><p style="color:#6b9200;">Stopień niski (1)</p>`; break;
-        case 2: lawinyTxt = `<img src="Lawina2.png"><p style="color:#ca0;">Stopień umiarkowany (2)</p>`; break;
-        case 3: lawinyTxt = `<img src="Lawina3.png"><p style="color:#fd9800;">Stopień znaczny (3)</p>`; break;
-        case 4: lawinyTxt = `<img src="Lawina4.png"><p style="color:#f00;">Stopień wysoki (4)</p>`; break;
-        case 5: lawinyTxt = `<img src="Lawina5.png"><p style="color:#c00;">Bardzo wysoki (5)</p>`; break;
-        default: lawinyTxt = `<img src="Lawina0.png"><p>Brak zagrożenia / brak danych (0)</p>`;
+        case 1: lawinyTxt = `<img src="../media/icons/Lawina1.png"><p style="color:#6b9200;">Stopień niski (1)</p>`; break;
+        case 2: lawinyTxt = `<img src="../media/icons/Lawina2.png"><p style="color:#ca0;">Stopień umiarkowany (2)</p>`; break;
+        case 3: lawinyTxt = `<img src="../media/icons/Lawina3.png"><p style="color:#fd9800;">Stopień znaczny (3)</p>`; break;
+        case 4: lawinyTxt = `<img src="../media/icons/Lawina4.png"><p style="color:#f00;">Stopień wysoki (4)</p>`; break;
+        case 5: lawinyTxt = `<img src="../media/icons/Lawina5.png"><p style="color:#c00;">Bardzo wysoki (5)</p>`; break;
+        default: lawinyTxt = `<img src="../media/icons/Lawina0.png"><p>Brak zagrożenia / brak danych (0)</p>`;
       }
 
       // === WSTAWIANIE DO STRONY ===
