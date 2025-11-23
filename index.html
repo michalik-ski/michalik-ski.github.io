@@ -137,7 +137,7 @@
         <div class="night-content">
           <h1><b style="font-weight: 800; color: #aaf">NOCNA</b> JAZDA!</h1>
           <h3>zapraszamy na jazdę po zmorku</h3>
-          <h2>16:00 – 20:00</h2>
+          <h2>16:00 – 21:00</h2>
           <a class="MoreButtonTransparent" href="/">Zobacz więcej</a>
         </div>
       </div>
@@ -398,7 +398,111 @@ document.getElementById("today").textContent =
     `${todayFormatted.text}`;
 </script>
 
-<script src="actual.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  fetch("actual.json")
+    .then(res => res.json())
+    .then(actual => {
+
+      // === ELEMENTY STRONY ===
+      const wyciagiH = document.getElementById("wyciagiO");
+      const trasyH = document.getElementById("trasyO");
+      const lawinyH = document.getElementById("lawiny");
+      const snowH = document.getElementById("snow");
+
+      // === FUNKCJE POMOCNICZE ===
+      const timeToMinutes = (t) => {
+        if (!t) return null;
+        const [h, m] = t.split(":").map(Number);
+        return h * 60 + m;
+      };
+
+      const isNowBetween = (start, end) => {
+        const now = new Date();
+        const nowMin = now.getHours() * 60 + now.getMinutes();
+        return nowMin >= start && nowMin <= end;
+      };
+
+      // === PODZIAŁ DANYCH ===
+      const lawiny = actual.find(i => i.typ === "lawiny")?.poziom || 0;
+      const trasy = actual.filter(i => i.typ === "trasa");
+      const wyciagi = actual.filter(i => i.typ === "wyciąg");
+      const trasy_biegowe = actual.filter(i => i.typ === "biegowa");
+
+      // === OBLICZENIA ===
+      const openLifts = wyciagi.filter(w => {
+        const start = timeToMinutes(w.godzina_otwarcia);
+        const end = timeToMinutes(w.godzina_zamkniecia);
+        return w.otwarty && isNowBetween(start, end);
+      }).length;
+
+      const openPaths = trasy.filter(t => {
+        const start = timeToMinutes(t.godzina_otwarcia);
+        const end = timeToMinutes(t.godzina_zamkniecia);
+        return t.otwarta && isNowBetween(start, end);
+      }).length;
+
+      const openRuns = trasy_biegowe.filter(r => {
+        const start = timeToMinutes(r.godzina_otwarcia);
+        const end = timeToMinutes(r.godzina_zamkniecia);
+        return r.otwarta && isNowBetween(start, end);
+      }).length;
+
+      const snows = [
+        ...trasy.map(t => t.pokrywa_sniezna_cm || 0),
+        ...trasy_biegowe.map(r => r.pokrywa_sniezna_cm || 0)
+      ].filter(s => s > 0);
+
+      const snow = snows.length ? Math.round(snows.reduce((a, b) => a + b, 0) / snows.length) : 0;
+
+      // === WYŚWIETLANIE ===
+      function iconText(open, total, label, icon) {
+        const color = open === 0 ? "#a00" : "#0a0";
+        const symbol = open === 0 ? "times-circle" : "check-circle";
+        return `
+          <div class="trasaO">
+            <img src="${icon}" alt="${label}">
+            <span>
+              <h2>${label}:</h2>
+              <h1 style="color: ${color};">
+                <i class="fa fa-${symbol}" aria-hidden="true"></i> ${open}/${total}
+              </h1>
+            </span>
+          </div>`;
+      }
+
+      const openLiftsTxt = iconText(openLifts, wyciagi.length, "Otwarte wyciągi", "chair-lift.png");
+      const openPathsTxt = iconText(openPaths, trasy.length, "Otwarte trasy narciarskie", "ski-slope.png");
+      const openRunsTxt = iconText(openRuns, trasy_biegowe.length, "Otwarte trasy biegowe", "ski-run.png");
+
+      const snowTxt = snow > 0
+        ? `<p style="min-width:70px;text-align:center;"><i class="fa fa-snowflake-o" aria-hidden="true" style="font-size:40px;"></i><i class="fa fa-arrows-v" aria-hidden="true" style="font-size:40px;"></i></p> Średnia grubość pokrywy śnieżnej: <b>${snow} cm</b>`
+        : `<p style="min-width:70px;text-align:center"><i class="fa fa-times" aria-hidden="true" style="font-size:40px;"></i></p> Brak pokrywy śnieżnej`;
+
+      let lawinyTxt;
+      switch (lawiny) {
+        case 1: lawinyTxt = `<img src="Lawina1.png"><p style="color:#6b9200;">Stopień niski (1)</p>`; break;
+        case 2: lawinyTxt = `<img src="Lawina2.png"><p style="color:#ca0;">Stopień umiarkowany (2)</p>`; break;
+        case 3: lawinyTxt = `<img src="Lawina3.png"><p style="color:#fd9800;">Stopień znaczny (3)</p>`; break;
+        case 4: lawinyTxt = `<img src="Lawina4.png"><p style="color:#f00;">Stopień wysoki (4)</p>`; break;
+        case 5: lawinyTxt = `<img src="Lawina5.png"><p style="color:#c00;">Bardzo wysoki (5)</p>`; break;
+        default: lawinyTxt = `<img src="Lawina0.png"><p>Brak zagrożenia / brak danych (0)</p>`;
+      }
+
+      // === WSTAWIANIE DO STRONY ===
+      wyciagiH.innerHTML = openLiftsTxt;
+      trasyH.innerHTML = `${openPathsTxt}${openRunsTxt}`;
+      snowH.innerHTML = snowTxt;
+      lawinyH.innerHTML = lawinyTxt;
+
+    })
+    .catch(err => {
+      console.error("❌ Błąd wczytywania actual.json:", err);
+    });
+
+});
+</script>
 
 <script>
 async function loadLastNews() {
