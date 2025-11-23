@@ -1,12 +1,716 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl-PL">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja strona</title>
+  <title>Michalik SKI</title>
+  <link rel="shortcut icon" href="../media/icons/snowball.png">
+  <meta name="description" content="Stok narciarski Michalik SKI">
+  <meta name="author" content="Miasto Michalikówka">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Stok narciarski Michalik SKI" />
+  <meta property="og:description" content="Oficjalna strona stoku narciarskiego Michalikówka SKI. Szusuj do nas!" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stok narciarski Michalik SKI" />
+  <meta name="twitter:description" content="Oficjalna strona stoku narciarskiego Michalikówka SKI. Szusuj do nas!" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/style/main.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
+
 <body>
-    <h1>Witaj na mojej stronie!</h1>
-    <p>To jest testowa strona hostowana na GitHub Pages 🚀</p>
+    <nav id="navbar" class="navbar">
+        <a href="#top" class="nav-logo">
+            <img src="/media/icons/MichalikSKI_LOGO.png" alt="Michalik SKI">
+        </a>
+        <div class="nav-buttons">
+            <a href="">Warunki</a>
+            <a href="">Oferta</a>
+            <a href="">Aktualności</a>
+            <a href="">Filmy</a>
+        </div>
+        <div class="menu-x" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
+
+    <!-- FULLSCREEN MENU -->
+    <div id="menuMain" class="fullscreen-menu">
+        <h1>MENU</h1>
+        <a href="#" data-submenu="submenuWarun">Warunki na stoku<span class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+        <a href="#" data-submenu="submenuOffert">Oferta<span class="arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a>
+        <a href="">Aktualności</a>
+        <a href="">Konkursy</a>
+        <a href="">Filmy</a>
+    </div>
+
+    <!-- PODMENU - dowolna liczba -->
+    <div id="submenuWarun" class="fullscreen-submenu">
+        <header><span class="back-arrow" data-back="menuMain"><i class="fa fa-angle-left" aria-hidden="true"></i></span> WARUNKI NA STOKU</header>
+        <a href="/">Wyciągi i trasy</a>
+        <a href="/">Prognoza pogody</a>
+        <a href="/">Lawiny</a>
+    </div>
+
+    <div id="submenuOffert" class="fullscreen-submenu">
+        <header><span class="back-arrow" data-back="menuMain"><i class="fa fa-angle-left" aria-hidden="true"></i></span> OFERTA</header>
+        <a href="/">Trasy i wyciągi</a>
+        <a href="/">Bilety</a>
+        <a href="/">Sklep online</a>
+        <a href="/">Nauka jazdy</a>
+    </div>
+
+    <main id="top">
+      <div class="banner">
+        <video autoplay muted loop playsinline poster="GOPR6928a.jpg" onerror="this.style.display='none'">
+          <source src="/media/video/McS_WebBG.webm" type="video/webm">
+        </video>
+        <img src="GOPR6928a.jpg" alt="Tło wideo" class="video-fallback">
+        <h1>Szusuj do nas!</h1>
+      </div>
+
+
+      <div class="komunikat">
+        <h3 id="today"></h3>
+        <div class="komunikat-stok">
+          <div class="komunikat-stok-c1">
+            <h1>OBECNY STAN:</h1>
+            <div class="wyciagi-i-trasy">
+              <div id="wyciagiO"></div>
+              <div id="trasyO"></div>
+            </div>
+            <a class="MoreButtonDark" href="/">Trasy i wyciągi</a>
+          </div>
+          <div class="komunikat-stok-c2">
+            <div class="komunikat-stok-c2-s">
+              <h1>POKRYWA ŚNIEŻNA:</h1>
+              <div id="lawiny"></div>
+              <div id="snow"></div>
+              <a class="MoreButtonDark" href="/">Zobacz więcej</a>
+            </div>
+            <div class="komunikat-stok-c2-a">
+              <h1>POWIETRZE:</h1>
+              <iframe id="airly_1389101101"
+                src="https://airly.org/widget/v2/?width=280&height=380&displayMeasurements=false&displayCAQI=true&autoHeight=true&autoWidth=true&language=pl&indexType=AIRLY_CAQI&unitSpeed=metric&unitTemperature=celsius&latitude=49.5822229795&longitude=20.7454472699"
+                frameborder="0"
+                style="border:none; margin-top: 15px; width: 100%;">
+              </iframe>
+            </div>
+          </div>
+          <div class="komunikat-stok-c3">
+            <h1>POGODA:</h1>
+            <iframe
+              src="https://www.meteoblue.com/pl/pogoda/widget/daily/jamnica_polska_12510622?geoloc=fixed&days=3&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=1&maxtemperature=1&mintemperature=0&windspeed=0&windgust=0&winddirection=0&uv=0&humidity=0&precipitation=0&precipitationprobability=0&spot=0&pressure=0&layout=light"
+              frameborder="0"
+              scrolling="NO"
+              allowtransparency="true"
+              sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox">
+            </iframe>
+            <a class="MoreButtonDark" href="/">Prognoza pogody</a>
+          </div>
+        </div>
+      </div>
+
+
+      <a href="" class="advertisement">
+        <p class="adREKLAMA">REKLAMA</p>
+        <div class="adLogo"></div>
+        <p class="adTXT">Szkółka narciarska</p>
+        <img src="/media/icons/BAŁWAN.png">
+      </a>
+
+      <div class="news">
+        <p>AKTUALNOŚCI</p>
+        <div class="news-last" id="newsLast"></div>
+        <a class="MoreButtonColor" href="/aktualnosci">Zobacz więcej aktualności</a>
+      </div>
+      
+      <div class="night">
+        <div class="night-content">
+          <h1><b style="font-weight: 800; color: #aaf">NOCNA</b> JAZDA!</h1>
+          <h3>zapraszamy na jazdę po zmorku</h3>
+          <h2>16:00 – 20:00</h2>
+          <a class="MoreButtonTransparent" href="/">Zobacz więcej</a>
+        </div>
+      </div>
+      <div class="calendar">
+        <h1>KALENDARZ WYDARZEŃ</h1>
+        <div class="calendar-container">
+          <div class="left-panel">
+            <div class="event-list" id="eventList"></div>
+            <div class="left-panel-button">
+              <a href="/wydarzenia" class="MoreButtonDark">Wszystkie wydarzenia</a>
+            </div>
+          </div>
+
+          <div class="right-panel">
+            <div class="calendar-header">
+              <button id="prevBtn" class="MoreButtonColor"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+              <div id="monthLabel"></div>
+              <button id="nextBtn" class="MoreButtonColor"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </div>
+            <div id="calendar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="movies">
+        <h1>FILMY ZE STOKU</h1>
+        <div id="movies-news"></div>
+        <a href="/filmy-ze-stoku" class="MoreButtonTransparent">Zobacz filmy</a>
+      </div>
+<script>
+// Baza filmów (najnowsze na górze po dacie)
+const movies = [
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH",
+    link: "https://www.youtube.com/embed/XA8sqFRQsM4",
+    date: "2021-01-31"
+  },
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH",
+    link: "https://www.youtube.com/embed/j4XiYIEhK70",
+    date: "2025-01-25"
+  },
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH (Bez komentarza)",
+    link: "https://www.youtube.com/embed/mMfFi3Et2-s",
+    date: "2025-01-25"
+  },
+];
+
+// Posortuj malejąco po dacie (najnowsze najpierw)
+movies.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+// Weź tylko 3 najnowsze
+const latestMovies = movies.slice(0, 3);
+
+const container = document.getElementById("movies-news");
+
+latestMovies.forEach(movie => {
+  const movieEl = document.createElement("div");
+  movieEl.className = "movie";
+  movieEl.innerHTML = `
+    <iframe 
+      src="${movie.link}"
+      title="${movie.title}" 
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    </iframe>
+  `;
+  container.appendChild(movieEl);
+});
+</script>
+    </main>
+    <footer class="main-footer">
+      <!-- Descktop Version -->
+      <div class="main-footer-content">
+        <div class="main-footer-section">
+          <img class="main-footer-logo" src="../media/icons/MichalikSKI_LOGO.png" alt="Michalik SKI">
+          <p>ul. Mała Góra 18b<br>33-300 Nowy Sącz</p>
+        </div>
+        <div class="main-footer-section mfs-cneter">
+          <h1>SPRAWDŹ</h1>
+          <div class="main-footer-section-links">
+            <a href="/mapa-osrodka">Mapa ośrodka</a>
+            <a href="/balwan-SKI">BałwanSKI – szkółka narciarska</a>
+            <a href="/" target="_blank">Portal Michalikówki</a>
+            <a href="https://malagora.github.io/" target="_blank">Portal Małej Góry</a>
+          </div>
+        </div>
+        <div class="main-footer-section">
+          <h1>PRZYDATNE LINKI</h1>
+          <div class="main-footer-section-links">
+            <a href="/lawiny">Zagrożenie lawinowe</a>
+            <a href="/pogoda">Prognoza pogody</a>
+            <a href="/wyciagi-i-trasy">Trasy i wyciągi</a>
+            <a href="/cennik">Cennik</a>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Version -->
+      <div class="main-footer-content-mobile">
+        <div class="main-footer-section-mobile">
+          <img class="main-footer-logo-mobile" src="MichalikSKI_LOGO.png" alt="MichalikSKI">
+          <p>ul. Mała Góra 18b<br>33-300 Nowy Sącz</p>
+        </div>
+        <div class="main-footer-section-mobile mfs-cneter-mobile">
+          <button class="footerAccordion">SPRAWDŹ</button>
+          <div class="main-footer-section-links-mobile">
+            <a href="/mapa-osrodka">Mapa ośrodka</a>
+            <a href="/balwan-SKI">BałwanSKI – szkółka narciarska</a>
+            <a href="/" target="_blank">Portal Michalikówki</a>
+            <a href="https://malagora.github.io/" target="_blank">Portal Małej Góry</a>
+          </div>
+        </div>
+        <div class="main-footer-section-mobile">
+          <button class="footerAccordion">PRZYDATNE LINKI</button>
+          <div class="main-footer-section-links-mobile">
+            <a href="/lawiny">Zagrożenie lawinowe</a>
+            <a href="/pogoda">Prognoza pogody</a>
+            <a href="/wyciagi-i-trasy">Trasy i wyciągi</a>
+            <a href="/cennik">Cennik</a>
+          </div>
+        </div>
+      </div>
+      <script>
+      var acc = document.getElementsByClassName("footerAccordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("footerAccordionActive");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+      </script>
+      <!-- Copyright -->
+      <div class="main-footer-copyright">
+        <img src="../media/icons/MichalikSKI_LOGO.png" alt="MichalikSKI" style="filter: brightness(0);">
+        <p><i class="fa fa-copyright"></i> Michalik SKI <span id="footerYear"></span></p>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("footerYear").textContent = new Date().getFullYear();
+    </script>
+    </footer>
+
+
+<script>
+const navbar = document.getElementById("navbar");
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    navbar.style.transform = "translateY(-120%)"; // chowaj
+  } else {
+    navbar.style.transform = "translateY(0)"; // pokazuj
+  }
+
+  lastScroll = currentScroll;
+});
+
+let _menuScrollPos = 0;
+
+function toggleMenu(btn) {
+  const mainMenu = document.getElementById('menuMain');
+  const submenus = document.querySelectorAll('.fullscreen-submenu');
+
+  const isOpen = mainMenu.classList.contains('active');
+
+  if (!isOpen) {
+    // OTWIERANIE
+    btn.classList.add('change');
+    _menuScrollPos = window.scrollY || window.pageYOffset;
+    // zablokuj scroll strony
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${_menuScrollPos}px`;
+
+    // resetuj podmenu (na pewno schowane i ustawione poza ekranem)
+    submenus.forEach(s => {
+      s.classList.remove('active', 'slide-out');
+      s.style.transition = '';         // usuń inline transition (jeśli były)
+      s.style.transform = 'translateX(100%)';
+      s.style.visibility = 'hidden';
+    });
+
+    // pokaz główne menu (CSS .active ustawi transform/opacity)
+    mainMenu.style.transform = ''; // usuń inline transform (bez konfliktu z CSS)
+    mainMenu.classList.add('active');
+  } else {
+    // ZAMYKANIE - natychmiastowy reset wszystkiego
+    btn.classList.remove('change');
+
+    // ukryj główne menu
+    mainMenu.classList.remove('active');
+    mainMenu.style.transform = ''; // usuń inline transform
+
+    // natychmiast zresetuj wszystkie podmenu (ukryj i ustaw poza ekranem)
+    submenus.forEach(s => {
+      s.classList.remove('active', 'slide-out');
+      s.style.transform = 'translateX(100%)';
+      s.style.visibility = 'hidden';
+    });
+
+    // odblokuj scroll i przywróć pozycję
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, _menuScrollPos);
+  }
+}
+
+// OTWIERANIE PODMENU: elementy z data-submenu="idPodmenu"
+document.querySelectorAll('[data-submenu]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    // otwieramy podmenu tylko gdy główne menu jest aktywne
+    const mainMenu = document.getElementById('menuMain');
+    if (!mainMenu.classList.contains('active')) return;
+
+    e.preventDefault();
+    const id = this.dataset.submenu;
+    if (!id) return;
+    const submenu = document.getElementById(id);
+    if (!submenu) return;
+
+    // upewnij się, że podmenu startuje poza ekranem po prawej (lub lewej - zależnie od CSS)
+    // tu przyjmujemy: domyślnie podmenu w CSS ma transform: translateX(100%) (poza prawą krawędzią)
+    submenu.style.visibility = 'visible';
+    // zapewniamy transition (jeśli chcesz override'ować w JS)
+    submenu.style.transition = 'transform 0.36s ease';
+    // ustaw początkowe położenie (jeśli zostało zmienione wcześniej)
+    submenu.style.transform = 'translateX(100%)';
+
+    // wymuś reflow żeby animacja zadziałała
+    // eslint-disable-next-line no-unused-expressions
+    submenu.offsetHeight;
+
+    // przesuń główne menu na lewo, wjedzie podmenu na środek
+    mainMenu.style.transform = 'translateX(-100%)';
+    submenu.classList.add('active');
+    submenu.style.transform = 'translateX(0)';
+  });
+});
+
+// POWRÓT Z PODMENU (klik < ) - szybkie, płynne, i po animacji ukrycie podmenu
+document.querySelectorAll('.back-arrow').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+    const submenu = this.closest('.fullscreen-submenu');
+    const parentId = this.dataset.back || 'menuMain';
+    const parent = document.getElementById(parentId);
+    if (!submenu || !parent) return;
+
+    // przejedziemy podmenu w lewo (wyjście) i przywrócimy mainMenu do środka
+    // (zakładamy, że submenu ma inline transition ustawione przy otwarciu)
+    submenu.style.transform = 'translateX(-100%)';
+    parent.style.transform = 'translateX(0)';
+
+    // po zakończeniu animacji ukrywamy submenu i resetujemy jego transform do domyślnego
+    const handler = function (ev) {
+      if (ev.propertyName !== 'transform') return;
+      submenu.classList.remove('active', 'slide-out');
+      // ustaw poza prawą krawędź - gotowe do ponownego użycia
+      submenu.style.transform = 'translateX(100%)';
+      submenu.style.visibility = 'hidden';
+      // remove listener
+      submenu.removeEventListener('transitionend', handler);
+    };
+    // attach once
+    submenu.addEventListener('transitionend', handler);
+  });
+});
+</script>
+
+<script>
+const days = [
+    "niedziela",
+    "poniedziałek",
+    "wtorek",
+    "środa",
+    "czwartek",
+    "piątek",
+    "sobota"
+];
+
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    const weekday = days[date.getDay()];
+    return { text: `${weekday} ${day}.${month}.${year}`, weekday };
+}
+
+const today = new Date();
+
+const todayFormatted = formatDate(today);
+
+document.getElementById("today").textContent =
+    `${todayFormatted.text}`;
+</script>
+
+<script src="actual.js"></script>
+
+<script>
+async function loadLastNews() {
+  try {
+    const response = await fetch('/aktualnosci/post.json');
+    const newsData = await response.json();
+
+    // Sortowanie od najnowszego
+    const sortedNews = newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Wybieramy tylko 3 najnowsze
+    const lastThree = sortedNews.slice(0, 3);
+
+    const newsContainer = document.getElementById("newsLast");
+    if (!newsContainer) return;
+
+    newsContainer.innerHTML = lastThree.map(post => `
+      <a href="/aktualnosci/?post=${post.id}" class="news-main-post">
+        <div class="news-main-img" style="background-image: url('${post.image}');"></div>
+        <header>${post.title}</header>
+        <span>${post.description}</span>
+        <footer>
+          <div class="news-main-date">${new Date(post.date).toLocaleDateString("pl-PL", {day: "numeric", month: "long", year: "numeric"})}</div>
+          <div class="news-main-arrow">➔</div>
+        </footer>
+      </a>
+    `).join("");
+
+  } catch (error) {
+    console.error("Błąd ładowania ostatnich postów:", error);
+  }
+}
+
+// Start po załadowaniu strony
+document.addEventListener("DOMContentLoaded", loadLastNews);
+</script>
+
+<script>
+const events = [
+  {
+    tytul: "Otwarcie sezonu",
+    opis: "Rozpoczynamy sezon zimowy!",
+    data: "2025-11-23",
+    godzina: "14:00",
+    miniaturka: "https://picsum.photos/id/1011/200/150",
+  },
+  {
+    tytul: "Konkurs skoków narciarskich",
+    opis: "Rywalizacja.",
+    data: "2025-11-29",
+    godzina: "09:00",
+    miniaturka: "https://picsum.photos/id/1012/200/150",
+  },
+];
+
+// Nazwy miesięcy
+const monthNames = [
+  "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec",
+  "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
+];
+const monthShort = ["Sty.", "Lut.", "Mar.", "Kwi.", "Maj", "Cze.", "Lip.", "Sie.", "Wrz.", "Paź.", "Lis.", "Gru."];
+
+// Elementy DOM
+const calendar = document.getElementById("calendar");
+const monthLabel = document.getElementById("monthLabel");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const eventList = document.getElementById("eventList");
+
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+let selectMonthMode = false;
+let selectedCell = null;
+
+// Funkcja bezpiecznego formatowania daty lokalnej
+function formatDateLocal(date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+// Renderowanie kalendarza
+function renderCalendar() {
+  monthLabel.textContent = selectMonthMode
+    ? `${currentYear}`
+    : `${monthNames[currentMonth]} ${currentYear}`;
+  calendar.innerHTML = "";
+
+  // Tryb wyboru miesięcy
+  if (selectMonthMode) {
+    const grid = document.createElement("div");
+    grid.className = "month-grid";
+    monthShort.forEach((m, i) => {
+      const btn = document.createElement("button");
+      btn.textContent = m;
+      btn.onclick = () => {
+        currentMonth = i;
+        selectMonthMode = false;
+        renderCalendar();
+      };
+      grid.appendChild(btn);
+    });
+    calendar.appendChild(grid);
+    renderEventList();
+    return;
+  }
+
+  // Tworzenie tabeli kalendarza
+  const table = document.createElement("table");
+  table.className = "calendar-table";
+
+  const headerRow = document.createElement("tr");
+  ["pn.", "wt.", "śr.", "cz.", "pt.", "sb.", "nd."].forEach(d => {
+    const th = document.createElement("th");
+    th.textContent = d;
+    headerRow.appendChild(th);
+  });
+  table.appendChild(headerRow);
+
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const startDay = (firstDay.getDay() + 6) % 7;
+  const daysInMonth = lastDay.getDate();
+  const prevMonthDays = new Date(currentYear, currentMonth, 0).getDate();
+
+  const today = new Date();
+  let day = 1;
+  let nextDay = 1;
+
+  // 6 wierszy
+  for (let week = 0; week < 6; week++) {
+    const row = document.createElement("tr");
+
+    for (let dow = 0; dow < 7; dow++) {
+      const cell = document.createElement("td");
+      let cellDate;
+
+      if (week === 0 && dow < startDay) {
+        const d = prevMonthDays - startDay + dow + 1;
+        cell.textContent = d;
+        cell.classList.add("other-month");
+        cellDate = new Date(currentYear, currentMonth - 1, d);
+      } else if (day > daysInMonth) {
+        cell.textContent = nextDay++;
+        cell.classList.add("other-month");
+        cellDate = new Date(currentYear, currentMonth + 1, nextDay - 1);
+      } else {
+        cell.textContent = day;
+        cellDate = new Date(currentYear, currentMonth, day);
+        day++;
+      }
+
+      const dateStr = formatDateLocal(cellDate);
+      const event = events.find(e => e.data === dateStr);
+      const isToday = formatDateLocal(cellDate) === formatDateLocal(today);
+
+      // dzień z wydarzeniem
+      if (event) {
+        cell.classList.add("event-day");
+        cell.onclick = () => {
+          showEvent(event);
+
+          // Usuń poprzednie zaznaczenie
+          if (selectedCell) {
+            selectedCell.querySelector(".event-highlight")?.remove();
+          }
+
+          // Utwórz czerwone kółko
+          const highlight = document.createElement("div");
+          highlight.className = "event-highlight";
+          cell.appendChild(highlight);
+          selectedCell = cell;
+        };
+      }
+
+      // dzisiejszy dzień
+      if (isToday && cellDate.getMonth() === currentMonth) {
+        const dot = document.createElement("div");
+        dot.className = "dot";
+        cell.appendChild(dot);
+        cell.classList.add("today");
+      }
+
+      row.appendChild(cell);
+    }
+
+    table.appendChild(row);
+  }
+
+  calendar.appendChild(table);
+  renderEventList();
+}
+
+// Lista wydarzeń tylko z aktualnego miesiąca
+function renderEventList() {
+  eventList.innerHTML = "";
+  const monthEvents = events
+    .filter(e => {
+      const d = new Date(e.data);
+      return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+    })
+    .sort((a, b) => new Date(a.data) - new Date(b.data));
+
+  if (monthEvents.length === 0) {
+    eventList.innerHTML = "<p>Brak wydarzeń w tym miesiącu.</p>";
+    return;
+  }
+
+  monthEvents.forEach(e => {
+    const a = document.createElement("a");
+    a.className = "event-item";
+    a.href = `/wydarzenia/?wydarzenie=${encodeURIComponent(e.tytul.toLowerCase().replace(/\s+/g, "-"))}`;
+    a.innerHTML = `
+      <img src="${e.miniaturka}" alt="${e.tytul}">
+      <h3>${e.tytul}</h3>
+      <p><i class="fa fa-calendar-o" aria-hidden="true"></i> ${e.data} │ ${e.godzina}</p>`;
+    eventList.appendChild(a);
+  });
+}
+
+// Pokazanie szczegółów konkretnego wydarzenia
+function showEvent(ev) {
+  eventList.innerHTML = "";
+  const a = document.createElement("a");
+  a.className = "event-item";
+  a.href = `/wydarzenia/?wydarzenie=${encodeURIComponent(ev.tytul.toLowerCase().replace(/\s+/g, "-"))}`;
+  a.innerHTML = `
+    <img src="${ev.miniaturka}" alt="${ev.tytul}">
+    <h3>${ev.tytul}</h3>
+    <p><i class="fa fa-calendar-o" aria-hidden="true"></i> ${ev.data} │ ${ev.godzina}</p>`;
+  eventList.appendChild(a);
+}
+
+// Obsługa przycisków
+monthLabel.addEventListener("click", () => {
+  selectMonthMode = !selectMonthMode;
+  renderCalendar();
+});
+
+prevBtn.addEventListener("click", () => {
+  if (selectMonthMode) currentYear--;
+  else {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+  }
+  renderCalendar();
+});
+
+nextBtn.addEventListener("click", () => {
+  if (selectMonthMode) currentYear++;
+  else {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+  }
+  renderCalendar();
+});
+
+renderCalendar();
+
+</script>
+
 </body>
 </html>
