@@ -166,50 +166,6 @@
         <div id="movies-news"></div>
         <a href="/filmy-ze-stoku" class="MoreButtonTransparent">Zobacz filmy</a>
       </div>
-<script>
-// Baza filmów (najnowsze na górze po dacie)
-const movies = [
-  {
-    title: "KONKURS SKOKÓW NARCIARSKICH",
-    link: "https://www.youtube.com/embed/XA8sqFRQsM4",
-    date: "2021-01-31"
-  },
-  {
-    title: "KONKURS SKOKÓW NARCIARSKICH",
-    link: "https://www.youtube.com/embed/j4XiYIEhK70",
-    date: "2025-01-25"
-  },
-  {
-    title: "KONKURS SKOKÓW NARCIARSKICH (Bez komentarza)",
-    link: "https://www.youtube.com/embed/mMfFi3Et2-s",
-    date: "2025-01-25"
-  },
-];
-
-// Posortuj malejąco po dacie (najnowsze najpierw)
-movies.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-// Weź tylko 3 najnowsze
-const latestMovies = movies.slice(0, 3);
-
-const container = document.getElementById("movies-news");
-
-latestMovies.forEach(movie => {
-  const movieEl = document.createElement("div");
-  movieEl.className = "movie";
-  movieEl.innerHTML = `
-    <iframe 
-      src="${movie.link}"
-      title="${movie.title}" 
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    </iframe>
-  `;
-  container.appendChild(movieEl);
-});
-</script>
     </main>
     <footer class="main-footer">
       <!-- Descktop Version -->
@@ -710,6 +666,51 @@ nextBtn.addEventListener("click", () => {
 
 renderCalendar();
 
+</script>
+
+<script>
+// Baza filmów (najnowsze na górze po dacie)
+const movies = [
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH",
+    link: "https://www.youtube.com/embed/XA8sqFRQsM4",
+    date: "2021-01-31"
+  },
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH",
+    link: "https://www.youtube.com/embed/j4XiYIEhK70",
+    date: "2025-01-25"
+  },
+  {
+    title: "KONKURS SKOKÓW NARCIARSKICH (Bez komentarza)",
+    link: "https://www.youtube.com/embed/mMfFi3Et2-s",
+    date: "2025-01-25"
+  },
+];
+
+// Posortuj malejąco po dacie (najnowsze najpierw)
+movies.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+// Weź tylko 3 najnowsze
+const latestMovies = movies.slice(0, 3);
+
+const container = document.getElementById("movies-news");
+
+latestMovies.forEach(movie => {
+  const movieEl = document.createElement("div");
+  movieEl.className = "movie";
+  movieEl.innerHTML = `
+    <iframe 
+      src="${movie.link}"
+      title="${movie.title}" 
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    </iframe>
+  `;
+  container.appendChild(movieEl);
+});
 </script>
 
 </body>
