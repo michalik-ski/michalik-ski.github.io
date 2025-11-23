@@ -1,0 +1,87 @@
+[
+  { "typ": "lawiny", "poziom": 4 },
+  {
+    "typ": "trasa",
+    "nazwa": "Trasa 1 – skocznia",
+    "otwarta": true,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "21:00",
+    "ratrak_start": "16:00",
+    "ratrak_koniec": "16:30",
+    "warunki": true,
+    "pokrywa_sniezna_cm": 20
+  },
+  {
+    "typ": "trasa",
+    "nazwa": "Trasa 2 – zjazdowa",
+    "otwarta": false,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "21:00",
+    "ratrak_start": "16:00",
+    "ratrak_koniec": "16:30",
+    "warunki": false,
+    "pokrywa_sniezna_cm": 20
+  },
+  {
+    "typ": "trasa",
+    "nazwa": "Trasa 3 – MiniGórka",
+    "otwarta": true,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "19:00",
+    "ratrak_start": "15:45",
+    "ratrak_koniec": "16:00",
+    "warunki": true,
+    "pokrywa_sniezna_cm": 15
+  },
+  {
+    "typ": "trasa",
+    "nazwa": "Trasa 4 – MiniGórka Hopka",
+    "otwarta": true,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "19:00",
+    "ratrak_start": "15:45",
+    "ratrak_koniec": "16:00",
+    "warunki": true,
+    "pokrywa_sniezna_cm": 10
+  },
+  {
+    "typ": "wyciąg",
+    "typWyciąg": "krzesełko",
+    "nazwa": "Dziubtorpeda",
+    "otwarty": true,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "21:00"
+  },
+  {
+    "typ": "wyciąg",
+    "nazwa": "Tarasowa Górka",
+    "typWyciąg": "krzesełko",
+    "otwarty": false,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "16:00"
+  },
+  {
+    "typ": "wyciąg",
+    "nazwa": "MiniGórka",
+    "typWyciąg": "orczyk",
+    "otwarty": true,
+    "godzina_otwarcia": "10:00",
+    "godzina_zamkniecia": "16:00"
+  },
+  {
+    "typ": "biegowa",
+    "nazwa": "Pętla rekreacyjna",
+    "otwarta": true,
+    "godzina_otwarcia": "09:00",
+    "godzina_zamkniecia": "16:00",
+    "pokrywa_sniezna_cm": 20
+  },
+  {
+    "typ": "biegowa",
+    "nazwa": "Olszyna 1",
+    "otwarta": true,
+    "godzina_otwarcia": "09:00",
+    "godzina_zamkniecia": "16:00",
+    "pokrywa_sniezna_cm": 25
+  }
+]
