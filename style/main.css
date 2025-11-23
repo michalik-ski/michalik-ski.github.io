@@ -838,7 +838,7 @@ body::after {
 	width: 100%;
 	height: calc(100dvh - 100px);
 	display: block;
-	background: url('/media/photos/Night.jpg');
+	background: url('../media/photos/Night-BG.jpg');
 	background-color: #aaa;
     background-size: cover;
 	background-position: center;
