@@ -1,26 +1,26 @@
 [
-  { "typ": "lawiny", "poziom": 4 },
+  { "typ": "lawiny", "poziom": 1 },
   {
     "typ": "trasa",
     "nazwa": "Trasa 1 – skocznia",
-    "otwarta": false,
+    "otwarta": true,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00",
     "ratrak_start": "16:00",
     "ratrak_koniec": "16:30",
-    "warunki": false,
-    "pokrywa_sniezna_cm": 20
+    "warunki": true,
+    "pokrywa_sniezna_cm": 30
   },
   {
     "typ": "trasa",
     "nazwa": "Trasa 2 – zjazdowa",
-    "otwarta": false,
+    "otwarta": true,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00",
     "ratrak_start": "16:00",
     "ratrak_koniec": "16:30",
-    "warunki": false,
-    "pokrywa_sniezna_cm": 20
+    "warunki": true,
+    "pokrywa_sniezna_cm": 10
   },
   {
     "typ": "trasa",
@@ -31,7 +31,7 @@
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
     "warunki": false,
-    "pokrywa_sniezna_cm": 15
+    "pokrywa_sniezna_cm": 10
   },
   {
     "typ": "trasa",
@@ -42,7 +42,7 @@
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
     "warunki": false,
-    "pokrywa_sniezna_cm": 10
+    "pokrywa_sniezna_cm": 5
   },
   {
     "typ": "wyciąg",
@@ -71,17 +71,17 @@
   {
     "typ": "biegowa",
     "nazwa": "Pętla rekreacyjna",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "09:00",
     "godzina_zamkniecia": "16:00",
-    "pokrywa_sniezna_cm": 20
+    "pokrywa_sniezna_cm": 5
   },
   {
     "typ": "biegowa",
     "nazwa": "Olszyna 1",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "09:00",
     "godzina_zamkniecia": "16:00",
-    "pokrywa_sniezna_cm": 25
+    "pokrywa_sniezna_cm": 5
   }
 ]
