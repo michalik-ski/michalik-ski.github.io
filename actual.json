@@ -1,5 +1,5 @@
 [
-  { "typ": "lawiny", "poziom": 1 },
+  { "typ": "lawiny", "poziom": 0 },
   {
     "typ": "trasa",
     "nazwa": "Trasa 1 – skocznia",
