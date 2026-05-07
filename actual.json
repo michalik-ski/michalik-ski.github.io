@@ -3,24 +3,24 @@
   {
     "typ": "trasa",
     "nazwa": "Trasa 1 – skocznia",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00",
     "ratrak_start": "16:00",
     "ratrak_koniec": "16:30",
     "warunki": true,
-    "pokrywa_sniezna_cm": 30
+    "pokrywa_sniezna_cm": 0
   },
   {
     "typ": "trasa",
     "nazwa": "Trasa 2 – zjazdowa",
-    "otwarta": true,
+    "otwarta": false,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "21:00",
     "ratrak_start": "16:00",
     "ratrak_koniec": "16:30",
     "warunki": true,
-    "pokrywa_sniezna_cm": 10
+    "pokrywa_sniezna_cm": 0
   },
   {
     "typ": "trasa",
@@ -31,7 +31,7 @@
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
     "warunki": false,
-    "pokrywa_sniezna_cm": 10
+    "pokrywa_sniezna_cm": 0
   },
   {
     "typ": "trasa",
@@ -42,7 +42,7 @@
     "ratrak_start": "15:45",
     "ratrak_koniec": "16:00",
     "warunki": false,
-    "pokrywa_sniezna_cm": 5
+    "pokrywa_sniezna_cm": 0
   },
   {
     "typ": "wyciąg",
@@ -56,7 +56,7 @@
     "typ": "wyciąg",
     "nazwa": "Tarasowa Górka",
     "typWyciąg": "krzesełko",
-    "otwarty": false,
+    "otwarty": true,
     "godzina_otwarcia": "10:00",
     "godzina_zamkniecia": "16:00"
   },
@@ -74,7 +74,7 @@
     "otwarta": false,
     "godzina_otwarcia": "09:00",
     "godzina_zamkniecia": "16:00",
-    "pokrywa_sniezna_cm": 5
+    "pokrywa_sniezna_cm": 0
   },
   {
     "typ": "biegowa",
@@ -82,6 +82,6 @@
     "otwarta": false,
     "godzina_otwarcia": "09:00",
     "godzina_zamkniecia": "16:00",
-    "pokrywa_sniezna_cm": 5
+    "pokrywa_sniezna_cm": 0
   }
 ]
